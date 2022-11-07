@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImage: ImageView
 
     /**
      * This method is called when the Activity is created.
@@ -16,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Find the Button in the layout
-        val rollButton: Button = findViewById(R.id.button)
+        val rollButton: Button = findViewById(R.id.roll_button)
 
         // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
@@ -34,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice.roll()
 
         // Find the ImageView in the layout
-        val diceImage: ImageView = findViewById(R.id.imageView)
+        val diceImage: ImageView = findViewById(R.id.dice_image)
 
         // Determine which drawable resource ID to use based on the dice roll
         val drawableResource = when (diceRoll) {
@@ -54,15 +57,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-/**
- * Dice with a fixed number of sides.
- */
-class Dice(private val numSides: Int) {
-
-    /**
-     * Do a random dice roll and return the result.
-     */
-    fun roll(): Int {
-        return (1..numSides).random()
-    }
-}
