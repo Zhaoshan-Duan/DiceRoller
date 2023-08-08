@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    // diceImage field
+    lateinit var diceImage: ImageView
 
     /**
      * This method is called when the Activity is created.
@@ -17,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         // Find the Button in the layout
         val rollButton: Button = findViewById(R.id.button)
+
+        diceImage = findViewById(R.id.imageView)
 
         // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
@@ -32,9 +36,6 @@ class MainActivity : AppCompatActivity() {
         // Create new Dice object with 6 sides and roll it
         val dice = Dice(6)
         val diceRoll = dice.roll()
-
-        // Find the ImageView in the layout
-        val diceImage: ImageView = findViewById(R.id.imageView)
 
         // Determine which drawable resource ID to use based on the dice roll
         val drawableResource = when (diceRoll) {
