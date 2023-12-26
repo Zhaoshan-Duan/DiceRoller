@@ -21,7 +21,7 @@
             android:id="@+id/imageView"
             android:layout_width="160dp"
             android:layout_height="200dp"
-            tools:srcCompat="@drawable/dice_1"
+            tools:srcCompat="@drawable/red_dice_dice_1"
             android:layout_gravity="center_horizontal" />
         
         <TextView
