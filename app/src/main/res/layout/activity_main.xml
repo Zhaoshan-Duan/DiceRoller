@@ -1,45 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Layout of the text-based Dice Roller app -->
+<!-- Layout of the text-based Dice Roller app -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    <ImageView
+        android:id="@+id/dice_iv"
+        android:layout_width="160dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        tools:srcCompat="@drawable/red_dice_dice_1" />
 
-    <data>
-        <variable
-            name="dice"
-            type="com.example.diceroller.Dice" />
-    </data>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id = "@+id/dice_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".MainActivity"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_horizontal"
+        android:textSize="125dp"
+        tools:text="3" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            tools:srcCompat="@drawable/red_dice_dice_1"
-            android:layout_gravity="center_horizontal" />
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{dice.res}"
-            tools:text="3"
-            android:layout_gravity="center_horizontal"
-            />
+    <Button
+        android:id="@+id/roll_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/roll" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:text="@string/roll" />
+    <Button
+        android:id="@+id/changeDiceBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/change_dice_color" />
 
-
-    </LinearLayout>
-</layout>
+</LinearLayout>
